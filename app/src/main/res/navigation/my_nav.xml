@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/host_Tabs_Fragment">
+
+    <fragment
+        android:id="@+id/host_Tabs_Fragment"
+        android:name="com.example.chatapp.Tabs.Host_Tabs_Fragment"
+        android:label="fragment_host__tabs_"
+        tools:layout="@layout/fragment_host__tabs_" >
+        <action
+            android:id="@+id/action_host_Tabs_Fragment_to_messages_Fragment"
+            app:destination="@id/messages_Fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/messages_Fragment"
+        android:name="com.example.chatapp.Message.Messages_Fragment"
+        android:label="fragment_messages_"
+        tools:layout="@layout/fragment_messages_" >
+        <action
+            android:id="@+id/action_messages_Fragment_to_host_Tabs_Fragment"
+            app:destination="@id/host_Tabs_Fragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+</navigation>
